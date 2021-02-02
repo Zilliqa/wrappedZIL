@@ -181,8 +181,7 @@ end
 (* @param amount:       Number of tokens to be burned.                            *)
 transition Burn(amount: Uint128)
   AuthorizedBurnIfSufficientBalance _sender amount;
-  msg_to_sender = {_tag : "BurnSuccessCallBack"; _recipient : _sender; _amount : amount; 
-                    burn_account : _sender; amount : amount};
+  msg_to_sender = {_tag : "AddFunds"; _recipient : _sender; _amount : amount};
   msgs = one_msg msg_to_sender;
   send msgs
 end
