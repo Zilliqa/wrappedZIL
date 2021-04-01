@@ -4,9 +4,9 @@ Wrapping native $ZIL as an ZRC2 token to simplify developers' life. For use in P
 
 # Token information
 
-Name: Wrapped ZIL
-Symbol: wZIL
-Decimal: 12
+Name: Wrapped ZIL  
+Symbol: wZIL  
+Decimal: 12  
 
 # Deployed contracts
 
