@@ -181,6 +181,8 @@ end
 (* @param amount:       Number of tokens to be burned.                            *)
 transition Burn(amount: Uint128)
   AuthorizedBurnIfSufficientBalance _sender amount;
+  (* To make it possible to transfer funds from a contract to both contracts and user accounts, *)
+  (* use a standard transition name as per ZRC-5, i.e. AddFunds. *)
   msg_to_sender = {_tag : "AddFunds"; _recipient : _sender; _amount : amount};
   msgs = one_msg msg_to_sender;
   send msgs
